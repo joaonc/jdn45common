@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmailContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Subject>Subject for text email with field {{FieldName}}</Subject>
+  <Body>This is a sample email with the a field.
+
+The field name is {{FieldName}} and the value is {{FieldValue}}.
+
+Fields are whatever you want them to be.
+Check out the Email class functionality for more details.
+
+Thanks,
+Joao</Body>
+  <IsHtml>false</IsHtml>
+</EmailContent>

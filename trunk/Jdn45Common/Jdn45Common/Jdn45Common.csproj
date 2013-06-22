@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\AttributeUtil.cs" />
+    <Compile Include="Attributes\BaseAttributes.cs" />
+    <Compile Include="Attributes\ViewProperties.cs" />
     <Compile Include="CollectionUtil.cs" />
+    <Compile Include="CountryUtil.cs" />
+    <Compile Include="Country\pt_BR.cs" />
+    <Compile Include="DataMapping\DataMappingEntry.cs" />
+    <Compile Include="DataMapping\DataMappingEntrySet.cs" />
+    <Compile Include="DataMapping\DataMappingStatus.cs" />
+    <Compile Include="DataUtil.cs" />
     <Compile Include="Db\ConnectionFactory.cs" />
     <Compile Include="Db\ConnectionParameters.cs" />
     <Compile Include="Db\ConnectionParametersManager.cs" />
@@ -50,9 +60,34 @@
     <Compile Include="Db\DbUtil.cs" />
     <Compile Include="Db\DbWhereOptions.cs" />
     <Compile Include="Db\QueryBuilder.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Dictionary.cs" />
+    <Compile Include="DictionaryUtil.cs" />
+    <Compile Include="Email\EmailContent.cs" />
+    <Compile Include="Email\EmailContentMap.cs" />
+    <Compile Include="Email\EmailParameters.cs" />
+    <Compile Include="Email\EmailUtil.cs" />
+    <Compile Include="FileAssociation\FileAssociationNode.cs" />
+    <Compile Include="FileAssociation\FileAssociationRootNode.cs" />
+    <Compile Include="FileAssociation\FileAssociationUtil.cs" />
+    <Compile Include="Ftp\Ftp.cs" />
+    <Compile Include="Ftp\FtpParameters.cs" />
+    <Compile Include="ImageUtil.cs" />
+    <Compile Include="Interface\IId.cs" />
+    <Compile Include="KeyValuePair.cs" />
+    <Compile Include="Log\LogLevel.cs" />
+    <Compile Include="Log\LogManager.cs" />
+    <Compile Include="Log\LogMessage.cs" />
+    <Compile Include="Permissions\PermissionsParameters.cs" />
+    <Compile Include="Permissions\Role.cs" />
+    <Compile Include="Permissions\User.cs" />
     <Compile Include="StringUtil.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Email\Content\pt-BR\EmailHtml.xml" />
+    <Content Include="Email\Content\pt-BR\EmailText.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
