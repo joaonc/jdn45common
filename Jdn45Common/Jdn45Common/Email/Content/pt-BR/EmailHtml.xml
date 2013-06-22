@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EmailContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Subject>Subject for html email with field {{FieldName}}</Subject>
+	<Body>This is a sample email with the a field.
+&lt;p&gt;
+The field name is &lt;b&gt;{{FieldName}}&lt;/b&gt; and the value is &lt;i&gt;{{FieldValue}}&lt;/i&gt;.&lt;br&gt;
+&lt;p&gt;
+Fields are whatever you want them to be.
+Check out the Email class functionality for more details.
+&lt;p&gt;
+&lt;p&gt;
+Thanks!
+-Joao
+&lt;p&gt;
+</Body>
+	<IsHtml>true</IsHtml>
+</EmailContent>
