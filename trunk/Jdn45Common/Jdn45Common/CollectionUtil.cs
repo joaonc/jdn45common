@@ -166,11 +166,19 @@ namespace Jdn45Common
                 return false;
             }
 
-            throw new Exception("Needs better implementation. Algorithm may return false positives.");  // TODO: fix
-            List<T> subtracted = new List<T>(listA);
-            Subtract(subtracted, listB);
+            List<T> subtractedA = new List<T>(listA);
+            Subtract(subtractedA, listB);
 
-            return subtracted.Count == 0;
+            if (subtractedA.Count > 0)
+                return false;
+
+            List<T> subtractedB = new List<T>(listB);
+            Subtract(subtractedB, listA);
+
+            if (subtractedB.Count > 0)
+                return false;
+
+            return true;
         }
 
         /// <summary>
