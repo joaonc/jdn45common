@@ -1,7 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Jdn45Common
 {
@@ -154,31 +155,38 @@ namespace Jdn45Common
         }
 
         /// <summary>
-        /// Returns whether list A and list B contain the same elements.
+        /// Returns whether list A and list B contain the same elements, not necessarily in the same order.
+        /// Taken from http://stackoverflow.com/a/3670089/205075
         /// </summary>
         /// <param name="listA"></param>
         /// <param name="listB"></param>
         /// <returns></returns>
         public static bool HaveSameElements(List<T> listA, List<T> listB)
         {
-            if (listA.Count != listB.Count)
+            var cnt = new Dictionary<T, int>();
+            foreach (T s in listA)
             {
-                return false;
+                if (cnt.ContainsKey(s))
+                {
+                    cnt[s]++;
+                }
+                else
+                {
+                    cnt.Add(s, 1);
+                }
             }
-
-            List<T> subtractedA = new List<T>(listA);
-            Subtract(subtractedA, listB);
-
-            if (subtractedA.Count > 0)
-                return false;
-
-            List<T> subtractedB = new List<T>(listB);
-            Subtract(subtractedB, listA);
-
-            if (subtractedB.Count > 0)
-                return false;
-
-            return true;
+            foreach (T s in listB)
+            {
+                if (cnt.ContainsKey(s))
+                {
+                    cnt[s]--;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return cnt.Values.All(n => n == 0);
         }
 
         /// <summary>
